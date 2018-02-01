@@ -11,28 +11,3 @@ body {
     padding: 5% 10%;
 }
 
-.app {
-    margin: 0 auto;
-    text-align: center;
-}
-
-.app__description {
-    font-size: 1.5rem;
-}
-
-.app__button {
-    font-size: 2rem;
-}
-
-.throbbler {
-    display: block;
-    z-index: 10000;
-    /*position: absolute;*/
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-}

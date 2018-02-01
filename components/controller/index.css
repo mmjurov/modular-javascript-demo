@@ -1,0 +1,12 @@
+.app {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.app__description {
+    font-size: 1.5rem;
+}
+
+.app__button {
+    font-size: 2rem;
+}

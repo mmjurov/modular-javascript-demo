@@ -1,10 +1,10 @@
-import * as throbbler from './throbbler.js';
+import * as throbbler from './../components/throbbler/index';
 
 const $start = $('#js-start-app');
 const $stop = $('#js-stop-app');
 
 const redraw = function() {
-    if (throbbler.isShowed()) {
+    if (throbbler.isVisible()) {
         $start.attr('disabled', true);
         $stop.attr('disabled', false);
     } else {

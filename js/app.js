@@ -1,3 +1,4 @@
-import * as controller from './controller.js';
+import Controller from './../components/controller';
 
-controller.init();
+const controller = new Controller();
+document.getElementById('js-application').appendChild(controller.element);
