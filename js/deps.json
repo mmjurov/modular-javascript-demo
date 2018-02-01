@@ -1,7 +1,0 @@
-{
-  "files": {
-    "app.js": ["throbbler.js", "controller.js"],
-    "controller.js": ["throbbler.js"],
-    "throbbler.js": []
-  }
-}
