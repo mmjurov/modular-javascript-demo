@@ -1,17 +1,19 @@
-var throbblerShowed = false;
-function showThrobbler() {
-    var throbbler = initThrobbler();
+var application = {};
+
+application.throbblerShowed = false;
+application.showThrobbler = function() {
+    var throbbler = application.initThrobbler();
     throbbler.show();
-    throbblerShowed = true;
-}
+    application.throbblerShowed = true;
+};
 
-function hideThrobbler() {
-    var throbbler = initThrobbler();
+application.hideThrobbler = function() {
+    var throbbler = application.initThrobbler();
     throbbler.hide();
-    throbblerShowed = false;
-}
+    application.throbblerShowed = false;
+};
 
-function initThrobbler() {
+application.initThrobbler = function() {
     var throbbler = $('#js-throbbler');
     if (throbbler.length === 0) {
         throbbler = $('<div id="js-throbbler" class="throbbler"></div>');
@@ -25,28 +27,28 @@ function initThrobbler() {
     });
 
     return throbbler;
-}
+};
 
-var $startButton = $('#js-start-app');
-var $stopButton = $('#js-stop-app');
+application.$startButton = $('#js-start-app');
+application.$stopButton = $('#js-stop-app');
 
-var switchButtonsState = function() {
-    if (throbblerShowed) {
-        $startButton.attr('disabled', true);
-        $stopButton.attr('disabled', false);
+application.switchButtonsState = function() {
+    if (application.throbblerShowed) {
+        application.$startButton.attr('disabled', true);
+        application.$stopButton.attr('disabled', false);
     } else {
-        $startButton.attr('disabled', false);
-        $stopButton.attr('disabled', true);
+        application.$startButton.attr('disabled', false);
+        application.$stopButton.attr('disabled', true);
     }
 };
-switchButtonsState();
+application.switchButtonsState();
 
-$startButton.on('click', function() {
-    showThrobbler();
-    switchButtonsState();
+application.$startButton.on('click', function() {
+    application.showThrobbler();
+    application.switchButtonsState();
 });
 
-$stopButton.on('click', function () {
-    hideThrobbler();
-    switchButtonsState();
+application.$stopButton.on('click', function () {
+    application.hideThrobbler();
+    application.switchButtonsState();
 });
