@@ -1,4 +1,3 @@
-angular.module('app', ['application.controller'])
-    .controller('ApplicationController', ['$scope', 'controller', function($scope, controller) {
-        controller.init();
-    }]);
+require(['./js/throbbler.js', './js/controller.js'], function(throbbler, controller) {
+   controller.init();
+});
