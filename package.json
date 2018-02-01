@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "./node_modules/.bin/gulp",
+    "webpack": "./node_modules/.bin/webpack"
   },
   "author": "",
   "license": "ISC",
