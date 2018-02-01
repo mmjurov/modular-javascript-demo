@@ -1,2 +1,3 @@
-var controller = require('./controller.js');
+import * as controller from './controller.js';
+
 controller.init();

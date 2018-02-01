@@ -1,9 +1,9 @@
-var throbbler = require('./throbbler.js');
+import * as throbbler from './throbbler.js';
 
-var $start = $('#js-start-app');
-var $stop = $('#js-stop-app');
+const $start = $('#js-start-app');
+const $stop = $('#js-stop-app');
 
-var redraw = function() {
+const redraw = function() {
     if (throbbler.isShowed()) {
         $start.attr('disabled', true);
         $stop.attr('disabled', false);
@@ -15,7 +15,7 @@ var redraw = function() {
 
 redraw();
 
-var init = function () {
+export const init = function () {
     $start.on('click', function() {
         throbbler.show();
         redraw();
@@ -24,8 +24,4 @@ var init = function () {
         throbbler.hide();
         redraw();
     });
-};
-
-module.exports = {
-    init: init
 };

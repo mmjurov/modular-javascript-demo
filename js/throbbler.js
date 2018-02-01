@@ -1,22 +1,22 @@
-var currentFile,
-    throbbler = $('#js-throbbler'),
-    showed = false;
+let currentFile,
+    showed = false,
+    throbbler = $('#js-throbbler');
 
-var show = function() {
+export const show = function() {
     init().show();
     showed = true;
 };
 
-var hide = function() {
+export const hide = function() {
     init().hide();
     showed = false;
 };
 
-var getRandomDigit = function() {
+const getRandomDigit = function() {
     return ~~(Math.random() * 10);
 };
 
-var getFilePath = function(digit) {
+const getFilePath = function(digit) {
     if (!parseInt(digit)) {
         digit = getRandomDigit();
     }
@@ -24,25 +24,25 @@ var getFilePath = function(digit) {
     return './img/loaders/' + digit + '.svg';
 };
 
-var regenerateFile = function() {
+const regenerateFile = function() {
     currentFile = getFilePath();
     return currentFile;
 };
 regenerateFile();
 
-var getCssBackground = function() {
+const getCssBackground = function() {
     return 'url(' + currentFile + ') no-repeat center center';
 };
 
-var getCurrentFile = function() {
+export const getCurrentFile = function() {
     return currentFile;
 };
 
-var isShowed = function() {
+export const isShowed = function() {
     return showed === true;
 };
 
-var init = function() {
+const init = function() {
 
     if (throbbler.length === 0) {
         throbbler = $('<div id="js-throbbler" class="throbbler"></div>')
@@ -54,11 +54,4 @@ var init = function() {
     }
 
     return throbbler;
-};
-
-module.exports = {
-    show: show,
-    hide: hide,
-    getCurrentFile: getCurrentFile,
-    isShowed: isShowed
 };
